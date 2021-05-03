@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E-Commerce JS Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+    <body>
+        <template id="menuBarTemplate">
+                <div id="menuBar" class="mb-5 col-12">
+                    <ul class="nav nav-tabs justify-content-center font-weight-bolder border-0">
+                        <li class="nav-item">
+                            <a id="products" class="text-secondary nav-link h-100">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="contact_us" class="text-secondary nav-link h-100">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="about_us" class="text-secondary nav-link h-100 ">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="view_cart" class="text-secondary nav-link h-100 ">View Cart</a>
+                        </li>
+                        <li class="nav-item ml-5">
+                            <p class="text-danger nav-link ml-5">Cart Total Price: <span id="totalPrice"></span> </p>
+                        </li>
+                    </ul>
+                </div>
+        </template>
+        
+        <div class="container-fluid col-12 cp">
+            <div id="currentPage">
+
+            </div>
+        </div>
+
+        <div id="#templates">
+            <template id="productsContainerTemplate">
+                <div class="row">
+                </div>
+            </template>
+
+            <template id="productCardTemplate">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mx-auto mb-3 ">
+                        <div class="card w18">
+                            <a class="viewMore btn"><img src="" class="card-img-top prodImg"alt="..."></a>
+                            <div class="card-body">
+                                <h5 class="prodTitle card-title" ></h5>
+                                <p class="prodDesc card-text"></p>
+                                <p class="prodPrice card-text text-danger d-inline float-left"></p>
+                                <button class="prodToCart btn btn-primary d-inline float-right">Add to cart <img src="./assets/media/cart.png"></button>
+                            </div>
+                        </div>
+                </div>
+            </template>
+
+            <template id="pagination">
+                <nav>
+                    <ul id="paginationUl" class="pagination justify-content-center"></ul>
+                </nav>
+            </template>
+
+            <template id="paginationLi">
+                <li class="page-item text-primary"><a class="page-link">1</a></li>
+            </template>
+
+            <template id="productViewDetailsTemplate" >
+                <div id="productViewDetails"  class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mx-auto ">
+                        <img 
+                        src="https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1001.jpg" 
+                        class="card-img-top prodImg" >
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <p class="prodTitle card-text"></p>
+                        <p class="prodDesc card-text"></p>
+                    </div>
+                    <div class="card col-lg-3 col-md-6 col-sm-6 col-12 mx-auto rounded-corners w18">
+                        <div class="card-body ">
+                            <p class="">Quantity Available:<span style="color:green;height: 10px" class="QAvailable ml-2"></span> <p/>
+                            <p class="">Availability:<span class="Availability ml-2 text-success"></span> <p/>
+                            <p class="">Ordered:<span class="Ordered ml-2 text-primary"></span> <p/>
+                            <hr>
+                            <p class="prodPrice card-text text-danger "></p>
+                            <p>Quantity to order:</p>
+                            <input type="number" min="1" class="form-control prodQuantity" value="1">
+                            <button class="prodToCart btn btn-primary btn-lg btn-block mt-3 rounded-corners">Add to cart <img src="./assets/media/cart.png"></button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+          
+
+        </div>
+    </body>
+  
+    <script src="./assets/js/handlers/localStorage.js"></script>
+    <script src="./assets/js/handlers/form.js"></script>
+    <script src="./assets/js/handlers/api.js"></script>
+    <script src="./assets/js/pageLoader.js"></script>
+    <script src="./assets/js/renderer.js"></script>
+    <script src="./assets/js/router.js"></script>
+    <script src="./assets/js/init.js"></script>
+  
+</html>
