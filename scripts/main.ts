@@ -1,5 +1,6 @@
 import { globalUser } from './sharedService.js';
 import { shopItemModel, shopItemPresenter, shopItemView } from "./MVP/shopItem.js" 
+import { productItemModel, productItemPresenter, productItemView } from './MVP/productItem.js';
 
 //* Defining how the Single page application should behave 
 //* and initializing the event listeners for all the buttons etc
@@ -15,6 +16,7 @@ function SignIn() {
 }
 
 function SignOut() { 
+    document.getElementById("productsList").hidden = true;
     document.getElementById("SignIn").hidden = false;
     document.getElementById("shopList").hidden = true;
     document.getElementById("HomeScreen").hidden = true;
@@ -23,12 +25,14 @@ function SignOut() {
 
 function goToShopList(){ 
     document.getElementById("shopList").hidden = false;
+    document.getElementById("productsList").hidden = true;
     document.getElementById("HomeScreen").hidden = true; 
     window.scrollTo(0,0);
 }
 
 function goToHome() { 
     document.getElementById("shopList").hidden = true; 
+    document.getElementById("productsList").hidden = true;
     document.getElementById("HomeScreen").hidden = false;
     window.scrollTo(0,0);
 }
@@ -43,13 +47,18 @@ function goToSignIn() {
     document.getElementById("SignIn").hidden = false;
 }
 
+function goToStartShopping(){
+    document.getElementById("productsList").hidden = false;
+    document.getElementById("HomeScreen").hidden = true;
+}
+
 document.getElementById("SignInButton").addEventListener('click', SignIn);
 document.getElementById("SignOutButton").addEventListener('click', SignOut);
 document.getElementById("goToSignIn").addEventListener('click', goToSignIn);
 document.getElementById("goToSignUp").addEventListener('click', goToSignUp);
 document.getElementById("goToHome").addEventListener('click', goToHome);
 document.getElementById("goToMyShopList").addEventListener('click', goToShopList);
-
+document.getElementById("startShoppingBtn").addEventListener('click', goToStartShopping);
 
 
 //* fetching data from a fake API and calling the appendData function to
@@ -58,17 +67,15 @@ document.getElementById("goToMyShopList").addEventListener('click', goToShopList
 function appendData(table){
     for (let index = 0; index < table.length; index++) {
         const element = table[index];
-        var itemP = new shopItemPresenter(new shopItemView(), new shopItemModel(
+        var productItemP = new productItemPresenter(new productItemView(), new productItemModel(
                 element.id, element.title ,element.price, element.description,4, element.category, element.image
             )
         )
-        globalUser.getShopListP().getModel().addToShopList(itemP)
-        globalUser.getShopListP().updateView();
-        document.getElementById("shopList").append(globalUser.getShopListP().getView().getHtml());
+       document.getElementById("productsList").append(productItemP.getView().getHtml());  
     } 
 }
 
-fetch('https://fakestoreapi.com/products?limit=5')
+fetch('https://fakestoreapi.com/products?limit=14')
     .then(res => res.json())
     .then((json) =>{
         appendData(json);  

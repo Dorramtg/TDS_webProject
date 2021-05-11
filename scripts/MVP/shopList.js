@@ -72,10 +72,6 @@ var ShopListView = /** @class */ (function () {
             this.totalPricetxt_Td.innerHTML = "Total Price " + model.getTotalPrice().toFixed(2).toString() + "$";
             totalTr.append(this.totalPricetxt_Td);
             totalTable.appendChild(totalTr);
-            /*
-            this.totalTd = document.createElement("h1");
-            this.totalTd.innerHTML = model.getTotalPrice().toString();
-            */
             this.html.append(table, totalTable);
         }
     };

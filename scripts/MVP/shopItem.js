@@ -1,4 +1,4 @@
-import { user } from './../sharedService.js';
+import { globalUser } from './../sharedService.js';
 //MVP 
 var shopItemModel = /** @class */ (function () {
     function shopItemModel(_id, _productName, _price, _description, _quantity, _category, _img) {
@@ -10,7 +10,7 @@ var shopItemModel = /** @class */ (function () {
         this._category = _category;
         this._img = _img;
         this._totalPrice = this._quantity * this._price;
-        user.getShopListP().getModel().setTotalPrice(user.getShopListP().getModel().getTotalPrice() + this._totalPrice);
+        globalUser.getShopListP().getModel().setTotalPrice(globalUser.getShopListP().getModel().getTotalPrice() + this._totalPrice);
     }
     //getters 
     shopItemModel.prototype.getId = function () { return this._id; };
@@ -97,17 +97,17 @@ var shopItemPresenter = /** @class */ (function () {
         _view.setModel(_model);
         var shopItem = this;
         _view.addRemoveBtnHandler(function () {
-            user.getShopListP().getModel().reduceTotalPrice(_model.getTotalPrice());
-            user.getShopListP().getModel().removeFromShopList(shopItem);
-            user.getShopListP().getView().getTotalTd().innerHTML = "Total Price " + user.getShopListP().getModel().getTotalPrice().toFixed(2) + "$";
+            globalUser.getShopListP().getModel().reduceTotalPrice(_model.getTotalPrice());
+            globalUser.getShopListP().getModel().removeFromShopList(shopItem);
+            globalUser.getShopListP().getView().getTotalTd().innerHTML = "Total Price " + globalUser.getShopListP().getModel().getTotalPrice().toFixed(2) + "$";
             _view.getHtml().remove();
         });
         _view.addQuantityInputHandler(function () {
-            user.getShopListP().getModel().reduceTotalPrice(_model.getTotalPrice());
+            globalUser.getShopListP().getModel().reduceTotalPrice(_model.getTotalPrice());
             _model.setTotalPrice(_model.getPrice() * _view.getQuantityInput().value);
-            user.getShopListP().getModel().addToTotalPrice(_model.getTotalPrice());
+            globalUser.getShopListP().getModel().addToTotalPrice(_model.getTotalPrice());
             _view.getPriceTd().innerHTML = (_model.getTotalPrice()).toFixed(2).toString() + "$";
-            user.getShopListP().getView().getTotalTd().innerHTML = "Total Price " + user.getShopListP().getModel().getTotalPrice().toFixed(2) + "$";
+            globalUser.getShopListP().getView().getTotalTd().innerHTML = "Total Price " + globalUser.getShopListP().getModel().getTotalPrice().toFixed(2) + "$";
         });
     }
     shopItemPresenter.prototype.getView = function () { return this._view; };

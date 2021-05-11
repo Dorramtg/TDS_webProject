@@ -685,3 +685,198 @@ th{
 .removeItemBtn:hover{
     background-color: #2b333f;
 }
+
+
+#startShoppingBtn{
+	background-color: #2D9AB7; /* Green */
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 15px 40px;
+	text-align: center;
+	text-decoration: none; 
+	font-size: 18px;
+	margin-top: 14px;
+	cursor: pointer;
+}
+
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+/* Products List CSS*/
+
+#startShoppingBtn:hover{
+	background-color: #39afcf;
+}
+#productsList{
+	text-align: center;
+	margin-top: 80px;
+}
+.productCard{
+	background-color: white;
+	box-shadow: 0 0 30px #000;
+	text-align: center;
+	border-radius: 5px;
+	width: 350px;
+	height: 340px;
+	display: inline-block;
+	margin : auto;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.productCard > h1{
+	font-size: 30px;
+	padding: 2px 15px;
+	color: rgb(17, 24, 34);
+} 
+.descriptionH2{
+	display: inline-block;
+	width: 50%;
+	height: 130px;
+	overflow: auto;
+	margin:0;
+	font-size: 15px;
+	color: rgb(6, 10, 15);
+}
+.priceH2{
+	margin-left: 25px;
+	margin-top: 5px;
+	text-align: start;
+	font-size: 20px;
+	display: inline-block;
+	color: rgb(0, 128, 32);
+}
+.productCard img{
+	display: inline-block;
+	width: 100px; 
+	height: 130px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 15px;  
+}
+.rowPriceBtns{
+	margin-top: 25px; 
+}
+.detailsBtn{
+	margin-left: 15px;  
+	background-color: #505050; /* Green */
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none; 
+	font-size: 13px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.detailsBtn:hover{
+	background-color: #868686; /* Green */
+}
+.addToCartBtn{
+	margin-left: 10px;  
+	background-color: #44b72d; /* Green */
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none; 
+	font-size: 13px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.addToCartBtn:hover{
+	background-color: #65d84e; /* Green */
+}
+
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+/* selectedProduct Modal CSS*/
+
+.modal {
+	font-family: 'segoe ui';
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 10px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	text-align: center;
+	background-color: #fefefe; 
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 70%;
+}
+
+/* The Close Button */
+#modalClose {
+	color: #494949;
+	float: right;
+	font-size: 28px; 
+}
+
+#modalClose:hover{
+	color: #9b9b9b; 
+	cursor: pointer;
+}
+#modalClose :focus {
+	color: #000; 
+	cursor: pointer;
+}
+.modal-Img{
+	display: inline-block;
+	height: 200px;  
+	margin: 30px; 
+}
+.modal-Description{
+	font-family: 'segoe ui';
+	font-weight: normal; 
+	width: 70%; 
+	text-align: center;
+	overflow: auto;
+	margin: auto;
+	font-size: 15px;
+	color: rgb(6, 10, 15);
+}
+.modal-ProductName{
+	font-family: 'segoe ui';
+	font-weight: normal;
+	font-size: 30px; 
+	color: rgb(17, 24, 34);
+}
+.modal-Price{
+	font-family: 'segoe ui';
+	font-weight: normal;
+	font-size: 30px;
+	margin-top: 25px;
+	color: rgb(17, 24, 34);
+} 
+.modal-content hr{
+	border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
