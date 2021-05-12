@@ -42,6 +42,53 @@
     <section id="shopList" hidden="false">
 
     </section>
+    
+    /* HomeScreenHTML */
+    
+    <section>
+		<div class="hero">
+			<div class="nav-bar">
+				<div class="nav-logo">
+					<img src="images/logo2.png">
+				</div>
+				<div class="nav-links" id="nav-links">
+					<i class="fa fa-close" onclick="closeMenu()"></i>
+					<ul>
+						<a href="#"><li>CATEGORIES</li></a>
+						<a href="#"><li>ABOUT US</li></a>
+					</ul>
+					<button type="button" class="btn">SIGN UP</button>
+				</div>
+				<i class="fa fa-bars" onclick="showMenu()"></i>
+			</div>
+			<div class="banner-title">
+				<h1><span>New</span> Products <br>Available</h1>
+				<button type="button" class="btn">EXPLORE</button>
+			</div>
+			<div class="vertical-bar">
+				<div class="search-icon">
+					<i class="fa fa-th-list"></i>
+					<i class="fa fa-search"></i>
+				</div>
+				<div class="social-icons">
+					<i class="fa fa-facebook"></i>
+					<i class="fa fa-instagram"></i>
+				</div>
+			</div>
+		</div>
+		<script>
+			var show = document.getElementById("nav-links");
+			function showMenu(){
+				show.style.right = "0";
+			}
+			function closeMenu(){
+				show.style.right = "-200px";
+			}
+		</script>
+	</section>
+    
+    /*End HomescreenHTML */
+    
     <secion id="HomeScreen" hidden>
         <div class="container2"> 
             </header>
